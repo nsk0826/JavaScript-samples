@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>matrixStyle</title>
+    <meta charset="UTF-8" />
+</head>
+<body style="margin:0">
+<canvas id="matrixStyle"></canvas>
+</body>
+
+<script type="text/javascript">
+    var matrixStyle = document.getElementById('matrixStyle');
+    if (!matrixStyle) {
+        alert('canvas非対応ブラウザです。');
+    }
+    else{
+        var wight = matrixStyle.wight = window.innerWidth;
+        var height = matrixStyle.height = window.innerWidth;
+
+        var records = Array(256);
+        for (var i = 0 ; i < records.length; i++) {
+            records[i] = 1;
+        }
+
+        var texts  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            texts += "abcdefghijklmnopqrstuvwxyz";
+            texts += "123456789";
+            texts += "@#$%^&*()*&^%";
+
+        var draw = function () {
+            matrixStyle.getContext('2d').fillStyle = 'rgba(0, 0, 0, 0.05)';
+            matrixStyle.getContext('2d').fillRect(0, 0, wight, height);
+
+            matrixStyle.getContext('2d').fillStyle = '#0F0';
+            matrixStyle.getContext('2d').font = "12px 'Monaco'";
+            
+            records.map(function (y_pos, index){
+                var text = texts[Math.floor(Math.random() * texts.length)];
+
+                x_pos = index * 10;
+
+                matrixStyle.getContext('2d').fillText(text, x_pos, y_pos);
+
+                records[index] = (y_pos > 0 + Math.random() * 1e4) ? 0 : y_pos + 10;
+                console.log(y_pos, index, text);
+            });
+        };
+        setInterval(draw, 300);
+    }
+</script>
+</html>
