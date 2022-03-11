@@ -26,7 +26,7 @@ function init() {
 
   // 平行光源
   const light = new THREE.DirectionalLight(0xFFFFFF);
-  light.intensity = 4; // 光の強さを倍に
+  light.intensity = 9; // 光の強さを倍に
   light.position.set(1, 1, 1);
   // シーンに追加
   scene.add(light);
@@ -39,7 +39,7 @@ function init() {
 
     // 箱を回転させる
     box.rotation.x += 0.01;
-    box.rotation.y += 0.01;
+    box.rotation.y += 0.05;
 
     // レンダリング
     renderer.render(scene, camera);
