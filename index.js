@@ -26,7 +26,7 @@ function init() {
 
   // 平行光源
   const light = new THREE.DirectionalLight(0xFFFFFF);
-  light.intensity = 2; // 光の強さを倍に
+  light.intensity = 4; // 光の強さを倍に
   light.position.set(1, 1, 1);
   // シーンに追加
   scene.add(light);
