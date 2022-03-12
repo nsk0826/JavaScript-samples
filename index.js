@@ -39,7 +39,7 @@ function init() {
 
     // 箱を回転させる
     box.rotation.x += 0.01;
-    box.rotation.y += 0.05;
+    box.rotation.y += 0.01;
 
     // レンダリング
     renderer.render(scene, camera);
