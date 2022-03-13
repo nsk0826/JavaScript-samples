@@ -43,7 +43,7 @@ function init() {
   function createStarField() {
     // 頂点情報を作詞絵
     const vertices = [];
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 2000; i++) {
       const x = 3000 * (Math.random() - 0.5);
       const y = 3000 * (Math.random() - 0.5);
       const z = 3000 * (Math.random() - 0.5);
