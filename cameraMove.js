@@ -3,9 +3,12 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
   // サイズを指定
-  const width = 1060;
-  const height = 640;
+  // const width = 1060;
+  // const height = 640;
 
+  const width = window.parent.screen.width;
+  const height = window.parent.screen.height;
+  
   // レンダラーを作成
   const renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#myCanvas'),
